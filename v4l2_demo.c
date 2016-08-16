@@ -1405,8 +1405,6 @@ static void itr_capture(int frames)
 		for (vars.pipe = 0; vars.pipe < MAX_PIPES; vars.pipe++) {
 			if (!vars.pipes[vars.pipe].active)
 				continue;
-			sleep(5);
-
 			itd_vidioc_dqbuf();
 			if (frames > vars.pipes[vars.pipe].reqbufs.count)
 				itd_vidioc_qbuf();
